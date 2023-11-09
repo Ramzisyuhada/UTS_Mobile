@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,6 +16,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.uts.Alert
+import com.example.uts.Home
+import com.example.uts.MainActivity
 import com.example.uts.R
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartModel
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartType
@@ -48,7 +51,8 @@ class Home_f : Fragment() {
         val cancelButton = dialog.findViewById<Button>(R.id.no)
 
         okButton.setOnClickListener {
-            // Tambahkan logika yang sesuai di sini
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
         }
         cancelButton.setOnClickListener {
             dialog.dismiss()
@@ -100,6 +104,8 @@ class Home_f : Fragment() {
             transaction?.commit()
         }
         logout.setOnClickListener {
+            showCustomAlertDialog(requireContext())
+
         }
         cal.setOnClickListener {
             val newFragment = Calculator()
