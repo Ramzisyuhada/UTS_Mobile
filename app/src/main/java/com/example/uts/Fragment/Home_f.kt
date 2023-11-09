@@ -161,8 +161,9 @@ class Home_f : Fragment() {
                 nilai_rata2.add(nil)
                 nilai.clear()
                 if (nilai.isEmpty()){
-                    a++
                     text.setText("Masukan Nama Siswa ke -  " + a+" = ")
+
+                    a++
                     j=0
                 }
             }

@@ -38,8 +38,8 @@ class about_itenas : Fragment() {
 
         val imageSlider = rootView.findViewById<ImageSlider>(R.id.slider)
 
-        imageList.add(SlideModel(R.drawable.itenas2,"Hallo "+arguments?.getString("data")))
-        imageList.add(SlideModel(R.drawable.itenas,"Hallo "+arguments?.getString("data")))
+        imageList.add(SlideModel(R.drawable.itenas2))
+        imageList.add(SlideModel(R.drawable.itenas))
 
         imageSlider.setImageList(imageList)
         return rootView

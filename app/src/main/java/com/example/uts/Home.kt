@@ -75,8 +75,12 @@ class Home : AppCompatActivity() {
 
     private fun loadFragment(fragment: Fragment, nama: String) {
 
+        val bundle = Bundle()
+        bundle.putString("data", nama)
+        fragment.arguments = bundle
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fl_wrapper, fragment)
+            Bundle().putString("data",nama)
+            replace(R.id.fl_wrapper,fragment)
             commit()
         }
     }
